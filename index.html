@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Nabil | Mobile Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary: #3b82f6;
+            --secondary: #1e293b;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #eff6ff 0%, #ffffff 100%);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .project-card {
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        /* Custom Mobile Optimization */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold bg-blue-600 bg-clip-text text-transparent">MN.</div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                <a href="#contact" class="px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">Hire Me</a>
+            </div>
+            <button class="md:hidden text-2xl" id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div class="md:hidden bg-white border-b px-6 py-4 hidden" id="mobile-nav">
+            <div class="flex flex-col space-y-4 font-medium text-center">
+                <a href="#home" class="mobile-link">Home</a>
+                <a href="#about" class="mobile-link">About</a>
+                <a href="#skills" class="mobile-link">Skills</a>
+                <a href="#projects" class="mobile-link">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6 hero-gradient">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-3/5 text-center md:text-left">
+                <span class="inline-block py-1 px-3 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-6">Available for Projects</span>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    Hi, I'm <span class="text-blue-600">Mario Nabil</span> <br>
+                    Mobile App Developer
+                </h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-xl">
+                    Information Systems student passionate about building practical mobile solutions that solve real-world problems through clean code and sharp analysis.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#projects" class="px-8 py-4 bg-slate-900 text-white rounded-xl font-semibold hover:bg-slate-800 transition shadow-lg text-center">View My Work</a>
+                    <a href="#contact" class="px-8 py-4 border-2 border-slate-200 rounded-xl font-semibold hover:bg-slate-50 transition text-center">Get in Touch</a>
+                </div>
+            </div>
+            <div class="md:w-2/5 mt-12 md:mt-0 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 bg-blue-600 rounded-3xl rotate-6 overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 flex items-center justify-center -rotate-6 bg-slate-100">
+                        <!-- مكان وضع الصورة الشخصية -->
+                        <!-- استبدل الرابط أدناه برابط صورتك الشخصية -->
+                        <img src="./Portfolio.jpeg" alt="Mario Nabil" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <i class="fas fa-user-tie text-9xl text-slate-300 hidden"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6">Turning Requirements into <span class="text-blue-600">Reality</span></h2>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                        As a final-year Information Systems student, I bridge the gap between complex business requirements and functional mobile applications. My academic background gives me a unique edge in analyzing systems and architecting robust solutions.
+                    </p>
+                    <p class="text-slate-600 text-lg leading-relaxed">
+                        I thrive on hands-on challenges and fast learning. For me, mobile development isn't just about UI—it's about creating tools that make life easier for users.
+                    </p>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-6">
+                    <div class="p-6 border rounded-2xl bg-slate-50">
+                        <h3 class="text-3xl font-bold text-blue-600 mb-2">Final</h3>
+                        <p class="text-slate-500 font-medium uppercase text-xs tracking-wider">Year IS Student</p>
+                    </div>
+                    <div class="p-6 border rounded-2xl bg-slate-50">
+                        <h3 class="text-3xl font-bold text-blue-600 mb-2">100%</h3>
+                        <p class="text-slate-500 font-medium uppercase text-xs tracking-wider">Hands-on Focused</p>
+                    </div>
+                    <div class="p-6 border rounded-2xl bg-slate-50">
+                        <h3 class="text-3xl font-bold text-blue-600 mb-2">Fast</h3>
+                        <p class="text-slate-500 font-medium uppercase text-xs tracking-wider">Learning Curve</p>
+                    </div>
+                    <div class="p-6 border rounded-2xl bg-slate-50">
+                        <h3 class="text-3xl font-bold text-blue-600 mb-2">Clear</h3>
+                        <p class="text-slate-500 font-medium uppercase text-xs tracking-wider">Problem Solver</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Core Competencies</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">My skill set focuses on the full lifecycle of application development, from the initial idea to the final product.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="skill-card p-8 bg-white rounded-3xl shadow-sm hover:shadow-md border border-slate-100">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-6">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Problem Solving</h3>
+                    <p class="text-slate-500">Exceptional ability to break down complex issues into manageable tasks and logical steps.</p>
+                </div>
+                <div class="skill-card p-8 bg-white rounded-3xl shadow-sm hover:shadow-md border border-slate-100">
+                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-2xl mb-6">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">App Development</h3>
+                    <p class="text-slate-500">Building intuitive and efficient mobile applications focusing on performance and user experience.</p>
+                </div>
+                <div class="skill-card p-8 bg-white rounded-3xl shadow-sm hover:shadow-md border border-slate-100">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-6">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Requirements Analysis</h3>
+                    <p class="text-slate-500">Analyzing user needs to ensure the technical solution matches real-world business goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section id="projects" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Recent Projects</h2>
+                    <p class="text-slate-500">Showcasing my journey in mobile development.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="project-card relative bg-slate-900 rounded-3xl h-80 group">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end text-white z-10">
+                        <span class="text-blue-400 text-sm font-bold tracking-widest uppercase mb-2">Case Study</span>
+                        <h3 class="text-2xl font-bold mb-2">Problem-Solving App</h3>
+                        <p class="text-slate-300 opacity-0 group-hover:opacity-100 transition duration-300">A mobile solution designed to streamline daily tasks through automated workflows.</p>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-80"></div>
+                </div>
+                <div class="project-card relative bg-slate-800 rounded-3xl h-80 group">
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end text-white z-10">
+                        <span class="text-green-400 text-sm font-bold tracking-widest uppercase mb-2">Concept</span>
+                        <h3 class="text-2xl font-bold mb-2">System Analysis Tool</h3>
+                        <p class="text-slate-300 opacity-0 group-hover:opacity-100 transition duration-300">Translating complex IS requirements into a simplified developer dashboard.</p>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-80"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-slate-950 text-white rounded-t-[3rem]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Ready to build something together?</h2>
+            <p class="text-slate-400 text-lg mb-12">I'm currently looking for opportunities to contribute to professional projects and grow as a developer.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <!-- Phone -->
+                <a href="tel:+201279803244" class="flex items-center p-6 bg-slate-900 rounded-2xl hover:bg-slate-800 transition">
+                    <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-sm text-slate-500">Call me</p>
+                        <p class="font-bold">+20 12 79803244</p>
+                    </div>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/mario-nabilll-409915367" target="_blank" class="flex items-center p-6 bg-slate-900 rounded-2xl hover:bg-slate-800 transition">
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mr-4">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-sm text-slate-500">Professional Profile</p>
+                        <p class="font-bold">LinkedIn</p>
+                    </div>
+                </a>
+                <!-- Email -->
+                <a href="mailto:nabilllmario@gmail.com" class="flex items-center p-6 bg-slate-900 rounded-2xl hover:bg-slate-800 transition md:col-span-2">
+                    <div class="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center mr-4">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-sm text-slate-500">Send an Email</p>
+                        <p class="font-bold">nabilllmario@gmail.com</p>
+                    </div>
+                </a>
+            </div>
+
+            <p class="text-slate-600 text-sm">© 2024 Mario Nabil Samuel. All rights reserved.</p>
+        </div>
+    </section>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
